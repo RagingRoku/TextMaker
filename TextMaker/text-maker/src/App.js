@@ -1,10 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 function App() {
   const [userText, setText] = useState('initialized');
+  // const [hyphenText, setHyphenText] = useState('initialized');
 
+  const Hyphens = (previousValue) => {
+
+    let currentValue = '';
+    for(let i=0; previousValue.length>i ;i++){
+
+      currentValue += previousValue [i];
+      if (i !== previousValue.length -1){
+        currentValue += '-';
+      }
+      // possibly implement a join in the future
+      // currentValue.join('-');
+    }
+    return currentValue;
+  }
 
   return (
     <div className="App">
@@ -13,14 +28,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>        
+
         <p>
           <form>
             <label>
@@ -32,17 +40,20 @@ function App() {
                 />
             </label>
           </form>
-
-
         </p>
+
         <p>
             You entered: {userText}
         </p>
-        
 
+        <p>
+            Hyphens: {Hyphens(userText)}
+        </p>
+        
       </header>
     </div>
-  );
+  );  
 }
+
 
 export default App;
