@@ -21,18 +21,28 @@ function App() {
     return currentValue;
   }
 
+  const SpongeBob = (previousValue) => {
+    let currentValue = ''
+    for(let i=0; previousValue.length>i ;i++){
+      if((i%2) === 0){
+        currentValue += previousValue[i].toUpperCase();
+      }
+      else{
+        currentValue += previousValue[i].toLowerCase();
+      }
+    }
+    return currentValue;
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
 
         <p>
           <form>
             <label>
-              Name:
+              Type something: 
               <input 
                 type="text" 
                 name="name" 
@@ -49,7 +59,11 @@ function App() {
         <p>
             Hyphens: {Hyphens(userText)}
         </p>
-        
+
+        <p>
+            SpongeBob: {SpongeBob(userText)}
+        </p>
+
       </header>
     </div>
   );  
