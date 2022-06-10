@@ -6,12 +6,12 @@ function App() {
   const [userText, setText] = useState('initialized');
   // const [hyphenText, setHyphenText] = useState('initialized');
 
-  const Hyphens = (previousValue) => {
+  const Hyphens = (previousValue: string) => {
 
     let currentValue = '';
     for(let i=0; previousValue.length>i ;i++){
 
-      currentValue += previousValue [i];
+      currentValue += previousValue[ i ];
       if (i !== previousValue.length -1){
         currentValue += '-';
       }
@@ -21,7 +21,7 @@ function App() {
     return currentValue;
   }
 
-  const SpongeBob = (previousValue) => {
+  const SpongeBob = (previousValue: string) => {
     let currentValue = ''
     for(let i=0; previousValue.length>i ;i++){
       if((i%2) === 0){
