@@ -1,25 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react'
+import Hyphens from './components/Hyphens'
 
 function App() {
   const [userText, setText] = useState('initialized');
   // const [hyphenText, setHyphenText] = useState('initialized');
 
-  const Hyphens = (previousValue: string) => {
+  // const Hyphens = (previousValue: string) => {
 
-    let currentValue = '';
-    for(let i=0; previousValue.length>i ;i++){
+  //   let currentValue = '';
+  //   for(let i=0; previousValue.length>i ;i++){
 
-      currentValue += previousValue[ i ];
-      if (i !== previousValue.length -1){
-        currentValue += '-';
-      }
-      // possibly implement a join in the future
-      // currentValue.join('-');
-    }
-    return currentValue;
-  }
+  //     currentValue += previousValue[ i ];
+  //     if (i !== previousValue.length -1){
+  //       currentValue += '-';
+  //     }
+  //     // possibly implement a join in the future
+  //     // currentValue.join('-');
+  //   }
+  //   return currentValue;
+  // }
 
   const SpongeBob = (previousValue: string) => {
     let currentValue = ''
@@ -56,9 +57,12 @@ function App() {
             You entered: {userText}
         </p>
 
-        <p>
+        {/* <p>
             Hyphens: {Hyphens(userText)}
-        </p>
+        </p> */}
+        <div>
+          <Hyphens previousValue={userText} />
+        </div>
 
         <p>
             SpongeBob: {SpongeBob(userText)}
